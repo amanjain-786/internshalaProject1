@@ -19,7 +19,7 @@ function App() {
         <Products products={products}></Products>
         <Filter brands={brands} category={category} setProducts={setProducts} products={products} productList={productList}></Filter>
       </div>
-      <Footer products={products} setProducts={setProducts}></Footer>
+      {/* <Footer products={products} setProducts={setProducts}></Footer> */}
     </div>
   );
 }
