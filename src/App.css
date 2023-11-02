@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+*{
+    padding:0;
+    margin:0;
+}
+.App{
+    /* margin:10px; */
+    /* border:1px solid black; */
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h1,
+.App h2{
+    text-decoration: underline;
+    text-decoration-color: rgb(44, 209, 200);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header{
+    margin-bottom:10px;
+    padding:10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.mainBody{
+    display:grid;
+    grid-template-areas: "p p p f";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width:100%;
+    position:relative;
+    top:0px;
+    left:0px;
 }
 
-.App-link {
-  color: #61dafb;
+.productsListDiv{
+    grid-area:p;
+    /* border:1px solid red; */
+    border-right:3px solid rgb(44, 209, 200);
+    padding-right:10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter{
+    grid-area:f;
+    height:500px;
+    position:sticky;
+    top:0px;
+    right:0px;
+}
+
+
+
+
+
+
+/* ------------------------------------all product list---------------------------------------- */
+.productsList ul{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+.productsListDiv h2{
+    /* border:1px solid green; */
+    background-color: white;
+    position:sticky;
+    top:0;
+    padding:10px 0px;
+    border-bottom:1px solid rgba(44, 209, 201, 0.64);
+    margin-bottom:10px;
+    z-index: 10;
+}
+
+
+
+
+
+
+
+
+/* --------------------------------single product----------------------------------------------- */
+.singleProduct{
+    height:400px;
+    width:300px;
+    border:2px solid rgba(32, 178, 171, 0.694);
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-left:10px;
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition-duration: 0.3s;
+}
+
+.singleProduct:hover{
+    scale:1.01;
+    cursor: pointer;
+}
+
+.singleProduct .productImage{
+    height:200px;
+    width:fit-content;
+    transition-duration: 0.3s;
+    border-radius: 10px;
+}
+
+.singleProduct .productImage:hover{
+    scale:1.1;
+    filter:drop-shadow(rgba(32, 178, 171, 0.661) 0px 0px 10px)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------------for filter------------------------------------- */
+.filter{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 10px;
+    padding:10px;
+}
+.filter .filterList{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:100%;
+    /* padding:10px; */
+    align-self: center;
+    border-bottom: 1px solid rgba(32, 178, 171, 0.694);
+    padding-bottom:20px;
+}
+
+.filter .filterList button,
+.filter .resetButton{
+    margin:5px;
+    padding:5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border:2px solid lightseagreen;
+    background-color: transparent;
+    transition-duration: 0.3s;
+    color:lightseagreen;
+}
+
+
+.filter .filterList button:hover,
+.filter .resetButton:hover{
+    cursor: pointer;
+    scale: 1.05;
+    border:2px solid rgb(44, 209, 200);
 }
